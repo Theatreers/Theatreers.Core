@@ -10,9 +10,9 @@ namespace Theatreers.Core.Models
   }
 
 
-  public class MessageObject
+  public class MessageObject<T> where T : IStorableValidatable
   {
     MessageHeaders Headers { get; set; }
-    IStorableValidatable Body { get; set; }
+    T Body { get; set; }
   }
 }
