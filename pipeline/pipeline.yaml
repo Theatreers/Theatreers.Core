@@ -16,7 +16,7 @@ stages:
           testResultsFormat: 'VSTest'
           testResultsFiles: '**/*.trx'
 - stage: PR_Build
-  displayName: 'Feature Branch CI Build'
+  displayName: 'PR Build from Feature into Master'
   dependsOn: []
   condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
   jobs:
