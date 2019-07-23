@@ -1,6 +1,6 @@
 stages:
 - stage: CI_Build
-  displayName: 'CI Build'  
+  displayName: 'SOME CHANGE TO CI BUILD'  
   condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
   jobs:
     - job: 'build'
