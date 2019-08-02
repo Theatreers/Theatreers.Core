@@ -69,6 +69,7 @@ stages:
           organization: 'theatreers'
           projectKey: $(projectName)
           projectName: $(projectName) 
+      # Execute WhiteSource bolt scanning
       - task: WhiteSource Bolt@19
         displayName: 'Execute WhiteSource Scanning'
         inputs:
