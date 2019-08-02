@@ -25,6 +25,9 @@ stages:
       pool:
         name: Hosted Ubuntu 1604
       steps:
+      - task: WhiteSource Bolt@19
+        inputs:
+          cwd: '$(System.DefaultWorkingDirectory)'
       - script: dotnet test src/Theatreers.Core.Tests/Theatreers.Core.Tests.csproj --logger trx --filter ClassName=Theatreers.Core.Tests.NonPartitionedStorageProviderTest
         displayName: 'Execute Tests'
       - task: PublishTestResults@2
