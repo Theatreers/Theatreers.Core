@@ -40,8 +40,8 @@ stages:
       - task: DotNetCoreCLI@2
         displayName: 'dotnet build'
         inputs:
-          command: build
-          packagesToPack: 'src/Theatreers.Core/Theatreers.Core.csproj'      
+          command: 'build'
+          projects: 'src/Theatreers.Core.Tests/Theatreers.Core.Tests.csproj'
       # Execute the Sonar Cloud Analysis, and push to Sonar Cloud
       - task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
         displayName: 'Run Code Analysis'
@@ -73,12 +73,12 @@ stages:
       - task: WhiteSource Bolt@19
         displayName: 'Execute WhiteSource Scanning'
         inputs:
-          cwd: '$(System.DefaultWorkingDirectory)'      
+          cwd: '$(System.DefaultWorkingDirectory)'          
       - task: DotNetCoreCLI@2
         displayName: 'dotnet build'
         inputs:
-          command: build
-          packagesToPack: 'src/Theatreers.Core/Theatreers.Core.csproj'      
+          command: 'build'
+          projects: 'src/Theatreers.Core.Tests/Theatreers.Core.Tests.csproj'   
       # Execute the Sonar Cloud Analysis, and push to Sonar Cloud
       - task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
         displayName: 'Run Code Analysis'
